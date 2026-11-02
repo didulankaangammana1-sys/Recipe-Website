@@ -1,0 +1,66 @@
+
+/* Use the styling from Login Page */
+@import url("login.css");
+
+/* Register Card */
+.register-card {
+    max-width: 460px;
+    padding: 30px 40px;
+}
+
+/* Logo */
+.register-card .logo {
+    margin-bottom: 25px;
+}
+
+/* Register Heading */
+.register-card .heading {
+    margin-bottom: 25px;
+}
+
+.register-card .heading h2 {
+    font-size: 25px;
+}
+
+.register-card .heading p {
+    font-size: 13px;
+    color: #888;
+}
+
+/* Input Fields */
+.register-card .input-box {
+    height: 52px;
+    margin-bottom: 14px;
+}
+
+/* Sign Up Button */
+.register-card .main-btn {
+    margin-top: 8px;
+}
+
+/* Divider */
+.register-card .divider {
+    margin: 23px 0;
+}
+
+/* Bottom Login Text */
+.register-card .bottom-text {
+    margin-top: 25px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) { /*If we use a mobile phone, site show as mobile version. */
+
+    .register-card {
+        padding: 28px 22px;
+    }
+
+    .register-card .heading h2 {
+        font-size: 22px;
+    }
+
+    .register-card .heading p {
+        font-size: 12px;
+    }
+
+}
