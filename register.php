@@ -99,26 +99,6 @@ session_start();
      
 <script>
 
-    // Show and hide password
-    function togglePassword(inputId, button) {
-
-        let password = document.getElementById(inputId);
-
-        if (password.type === "password") {
-            password.type = "text";
-            button.setAttribute("aria-label", "Hide password");
-        } else {
-            password.type = "password";
-            button.setAttribute("aria-label", "Show password");
-        }
-
-    }
-
-    // Google Sign Up
-    function googleSignup() {
-        alert("Google authentication will be added later.");
-    }
-
 
 document.getElementById("registerForm")
     .addEventListener("submit", function(event) {
