@@ -10,7 +10,7 @@ session_start();
 
     <title>Login | Tasty Recipes</title>
 
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login.css?v=3">
 </head>
 
 <body>
