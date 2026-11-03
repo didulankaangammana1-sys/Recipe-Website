@@ -61,7 +61,7 @@ session_start();
 
         <!-- Divider -->
         <div class="divider">
-            <span>OR</span>
+            <span>OR</span>   <!-- span used for select and style a small part of text without create new line-->
         </div>
 
         <!-- Register Link -->
@@ -74,18 +74,7 @@ session_start();
     </div>
 
     <script>
-        function togglePassword(inputId, button) {
-            let password = document.getElementById(inputId);
-
-            if (password.type === "password") {
-                password.type = "text";
-                button.setAttribute("aria-label", "Hide password");
-            } else {
-                password.type = "password";
-                button.setAttribute("aria-label", "Show password");
-            }
-        }
-
+       
         function forgotPassword(event) {
             event.preventDefault();
             alert("Password recovery will be added with the backend.");
