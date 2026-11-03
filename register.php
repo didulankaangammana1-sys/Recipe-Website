@@ -10,7 +10,8 @@ session_start();
 
     <title>Register | Tasty Recipes</title>
 
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="login.css?v=10">
+    <link rel="stylesheet" href="register.css?v=10">
 </head>
 
 <body>
@@ -120,9 +121,5 @@ document.getElementById("registerForm")
 
 
 </script>
-</body>
-</html>
-
-
 </body>
 </html>
