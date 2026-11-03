@@ -37,7 +37,7 @@ session_start();
                 simple and fun!
             </p>
 
-            <a href="recipes.html" class="btn">
+            <a href="recipes.php" class="btn">
                 Explore Recipes
             </a>
 
@@ -51,19 +51,7 @@ session_start();
 
     </section>
 
-    <!-- Popular Recipes -->
-    <section class="container section">
-
-        <div class="section-heading">
-            <h2>Popular Recipes</h2>
-            <a href="recipes.php">View All →</a>
-        </div>
-
-        <!-- Recipe cards added using JavaScript -->
-        <div class="recipe-grid" id="popularRecipes"></div>
-
-    </section>
-
+  
     <!-- Import Footer -->
     <?php include "footer.php"; ?>
 
