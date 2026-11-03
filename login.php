@@ -74,16 +74,10 @@ session_start();
     </div>
 
     <script>
-       
-        function forgotPassword(event) {
-            event.preventDefault();
-            alert("Password recovery will be added with the backend.");
-        }
 
         function googleLogin() {
             alert("Google authentication will be added later.");
         }
-
 
     </script>
 
