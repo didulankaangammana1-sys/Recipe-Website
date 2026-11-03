@@ -73,13 +73,6 @@ session_start();
 
     </div>
 
-    <script>
-
-        function googleLogin() {
-            alert("Google authentication will be added later.");
-        }
-
-    </script>
 
 </body>
 
