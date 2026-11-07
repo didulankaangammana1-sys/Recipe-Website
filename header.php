@@ -25,11 +25,19 @@
 
         <div class="nav-buttons">
 
-            <?php if (isset($_SESSION["user_id"])): ?>
+            <?php
+            // A saved user ID means the visitor is logged in.
+            if (isset($_SESSION["user_id"])) {
+                // Use a default name if no name is saved in the session.
+                $displayName = "User";
+                if (isset($_SESSION["user_name"])) {
+                    $displayName = $_SESSION["user_name"];
+                }
+            ?>
 
                 <span>
                     Hello,
-                    <?= htmlspecialchars($_SESSION["user_name"] ?? "User") ?>
+                    <?php echo htmlspecialchars($displayName); ?>
                 </span>
 
                 <form action="logout.php" method="POST">
@@ -38,14 +46,14 @@
                     </button>
                 </form>
 
-            <?php else: ?>
+            <?php } else { ?>
 
-                <a href="login.php">Login</a>
+                <a href="login.php" class="login-link">Login</a>
                 <a href="register.php" class="btn btn-small">
                     Sign Up
                 </a>
 
-            <?php endif; ?>
+            <?php } ?>
 
         </div>
 

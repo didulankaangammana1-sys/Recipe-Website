@@ -9,26 +9,21 @@ $password = "";
 
 try {
 
-    // Connect PHP to MySQL
-    $pdo = new PDO(
-        "mysql:host=$host;dbname=$database;charset=utf8mb4",
-        $username,
-        $password
-    );
+    // Build the connection details using the values above.
+    $connectionString = "mysql:host=" . $host . ";dbname=" . $database . ";charset=utf8mb4";
 
-    // Handle database errors
-    $pdo->setAttribute(
-        PDO::ATTR_ERRMODE,
-        PDO::ERRMODE_EXCEPTION
-    );
+    // Create the database connection used by the login and registration files.
+    $pdo = new PDO($connectionString, $username, $password);
 
-    $pdo->setAttribute(
-        PDO::ATTR_EMULATE_PREPARES,
-        false
-    );
+    // Report database errors as exceptions that try/catch can handle.
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-} catch (PDOException $e) {
+    // Let MySQL handle prepared queries and their separate input values.
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
+} catch (PDOException $error) {
+
+    // Stop if PHP could not connect to the database.
     die("Database connection failed!");
 
 }

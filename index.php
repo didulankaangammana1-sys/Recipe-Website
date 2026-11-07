@@ -1,4 +1,5 @@
 <?php
+// Start the session so this page can use the saved login details.
 session_start();
 ?>
 
@@ -9,15 +10,21 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Tasty Recipes</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css?v=5">
+    
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="index.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
     <!-- Import Header -->
-    <?php include "header.php"; ?>
+    <?php
+    // Show the navigation shared by the website pages.
+    include "header.php";
+    ?>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -53,7 +60,10 @@ session_start();
 
   
     <!-- Import Footer -->
-    <?php include "footer.php"; ?>
+    <?php
+    // Show the footer shared by the website pages.
+    include "footer.php";
+    ?>
 
 
 </body>

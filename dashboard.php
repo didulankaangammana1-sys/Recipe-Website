@@ -1,4 +1,5 @@
 <?php
+// Start the session so this page can use the saved login details.
 session_start();
 ?>
 <!DOCTYPE html>
@@ -8,42 +9,21 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Tasty Recipes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="dashboard.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <!-- Import Header -->
-    <?php include "header.php"; ?>
+    <?php
+    // Show the navigation shared by the website pages.
+    include "header.php";
+    ?>
 
     <div class="dashboard-layout">
-
-        <!-- Sidebar -->
-        <aside class="dashboard-sidebar">
-
-            <h3>My Account</h3>
-
-            <button
-                class="side-link active"
-                data-dashboard-view="recent">
-                ▦ Dashboard
-            </button>
-
-            <a href="recipes.html" class="side-link">
-                🍲 All Recipes
-            </a>
-
-            <button
-                class="side-link"
-                data-dashboard-view="favorites">
-                ♡ My Favorites
-            </button>
-
-            <a href="about.html" class="side-link">
-                ⓘ About Us
-            </a>
-
-        </aside>
 
         <!-- Main Dashboard -->
         <main class="dashboard-content">
@@ -91,34 +71,16 @@ session_start();
                         <p>Categories</p>
                     </div>
                 </div>
-
-            </section>
-
-            <!-- Dashboard Recipes -->
-            <section class="section">
-
-                <div class="section-heading">
-                    <h2 id="dashboardHeading">
-                        Recent Recipes
-                    </h2>
-
-                    <a href="recipes.php">
-                        View All →
-                    </a>
-                </div>
-
-                <div
-                    class="recipe-grid"
-                    id="dashboardRecipes">
-                </div>
-
             </section>
 
         </main>
 
     </div>
     <!-- Import Footer -->
-    <?php include "footer.php"; ?>
+    <?php
+    // Show the footer shared by the website pages.
+    include "footer.php";
+    ?>
 
 
 

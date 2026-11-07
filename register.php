@@ -1,5 +1,6 @@
 
 <?php
+// Start the session so this page can use the saved login details.
 session_start();
 ?>
 <!DOCTYPE html>
@@ -10,8 +11,8 @@ session_start();
 
     <title>Register | Tasty Recipes</title>
 
-    <link rel="stylesheet" href="login.css?v=10">
-    <link rel="stylesheet" href="register.css?v=10">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="register.css">
 </head>
 
 <body>

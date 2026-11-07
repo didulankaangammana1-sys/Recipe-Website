@@ -1,281 +1,57 @@
 
-/* Premium Navigation Bar */
 
-.navbar {
-    display: flex;
+/* Home Page */
+.hero {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-    padding: 16px 5%;
-
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid #f0e5db;
-    box-shadow: 0 4px 20px rgba(70, 40, 20, 0.07);
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    gap: 50px;
 }
 
-/* Website Logo */
-
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #342014;
-    text-decoration: none;
-    white-space: nowrap;
+.hero-text h1 {
+    font-size: 56px;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
-.logo span {
+.hero-text p {
+    color: #6d5a4c;
+    margin-bottom: 25px;
+    max-width: 450px;
+}
+
+.hero-text .tagline {
     color: #c45416;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-/* Desktop Menu */
+/* Responsive */
 
-.menu-content {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-    margin-left: auto;
-}
-
-/* Navigation Links */
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-.nav-links a {
-    position: relative;
-    padding: 10px 0;
-
-    font-size: 14px;
-    font-weight: 500;
-    color: #47372d;
-    text-decoration: none;
-
-    transition: color 0.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: #b95117;
-}
-
-/* Underline Hover Effect */
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-
-    left: 0;
-    bottom: 4px;
-
-    width: 0;
-    height: 2px;
-
-    background: #c45416;
-    border-radius: 5px;
-    transition: width 0.3s;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
-
-/* Login and Signup */
-
-.nav-buttons {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.login-link {
-    padding: 9px 20px;
-    border: 1px solid #e8d5c4;
-    border-radius: 25px;
-
-    color: #8f471d;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-.login-link:hover {
-    background: #fff1e6;
-    border-color: #c45416;
-}
-
-/* Sign Up and Logout Button */
-
-.nav-buttons .btn {
-    display: inline-block;
-    padding: 10px 24px;
-
-    background: linear-gradient(135deg, #d87530, #a74412);
-    color: white;
-
-    border: none;
-    border-radius: 25px;
-
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-
-    box-shadow: 0 4px 12px rgba(180, 80, 25, 0.20);
-    transition: 0.3s;
-}
-
-.nav-buttons .btn:hover {
-    background: linear-gradient(135deg, #b95117, #86340c);
-    transform: translateY(-2px);
-}
-
-.nav-buttons form {
-    margin: 0;
-}
-
-/* User Name */
-
-.nav-buttons span {
-    font-size: 14px;
-    color: #555;
-}
-
-/* Hamburger Button */
-
-.menu-btn {
-    display: none;
-    align-items: center;
-    justify-content: center;
-
-    width: 44px;
-    height: 44px;
-
-    background: #fff2e7;
-    color: #b95117;
-
-    border: 1px solid #ecd8c9;
-    border-radius: 10px;
-
-    font-size: 25px;
-    cursor: pointer;
-}
-
-/* Mobile and Tablet */
-
-@media (max-width: 1020px) {
-
-    .navbar {
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 14px 5%;
+@media (max-width: 800px) {
+    .hero,
+    .about-hero {
+        grid-template-columns: 1fr;
+        padding: 40px 0;
     }
 
-    .logo {
-        font-size: 22px;
+    .hero-text h1 {
+        font-size: 40px;
     }
 
-    .menu-btn {
-        display: flex;
-        margin-left: auto;
-    }
-
-    .menu-content {
-        display: none;
-        flex: 0 0 100%;
-        flex-direction: column;
-        align-items: stretch;
-
-        gap: 15px;
-        margin: 0;
-        padding: 20px;
-
-        background: #fffaf6;
-        border: 1px solid #f0e5db;
-        border-radius: 12px;
-
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    }
-
-    .menu-content.show {
-        display: flex;
-        animation: menuOpen 0.25s ease;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 5px;
-    }
-
-    .nav-links a {
-        display: block;
-        padding: 12px 15px;
-        border-radius: 8px;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-        background: #f8e9dd;
-    }
-
-    .nav-links a::after {
-        display: none;
-    }
-
-    .nav-buttons {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-
-        padding-top: 15px;
-        border-top: 1px solid #eaded2;
-    }
-
-    .login-link {
-        text-align: center;
-    }
-
-    .nav-buttons form,
-    .nav-buttons .btn {
-        width: 100%;
+    .hero-image img,
+    .about-image img {
+        height: 280px;
     }
 }
 
-/* Small Phones */
+@media (max-width: 600px) {
 
-@media (max-width: 400px) {
-
-    .logo {
-        font-size: 19px;
-    }
-
-    .menu-content {
-        padding: 15px;
-    }
-}
-
-/* Menu Opening Animation */
-
-@keyframes menuOpen {
-    from {
-        opacity: 0;
-        transform: translateY(-8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .hero-text h1 {
+        font-size: 34px;
     }
 }

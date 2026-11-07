@@ -1,0 +1,133 @@
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 16px 5%;
+    background: white;
+    box-shadow: 0 3px 12px #00000010;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #342014;
+    white-space: nowrap;
+}
+
+.menu-content,
+.nav-links,
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.menu-content {
+    gap: 35px;
+    margin-left: auto;
+}
+
+.nav-links {
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #47372d;
+    font-size: 14px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #c45416;
+}
+
+.nav-buttons {
+    gap: 14px;
+}
+
+.nav-buttons form {
+    margin: 0;
+}
+
+.nav-buttons span {
+    font-size: 14px;
+    color: #555;
+}
+
+.login-link {
+    padding: 9px 20px;
+    color: #8f471d;
+    border: 1px solid #e8d5c4;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+.menu-btn {
+    display: none;
+    padding: 8px 12px;
+    font-size: 24px;
+    color: #c45416;
+    background: #fff2e7;
+    border: 1px solid #ecd8c9;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1020px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        display: block;
+        margin-left: auto;
+    }
+
+    .menu-content {
+        display: none;
+        flex: 0 0 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        margin: 0;
+        padding: 20px;
+        background: #fffaf6;
+        border-radius: 12px;
+    }
+
+    .menu-content.show {
+        display: flex;
+    }
+
+    .nav-links,
+    .nav-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        padding: 10px;
+    }
+
+    .nav-buttons {
+        border-top: 1px solid #eaded2;
+        padding-top: 15px;
+    }
+
+    .nav-buttons .btn,
+    .nav-buttons form {
+        width: 100%;
+    }
+
+    .login-link {
+        text-align: center;
+    }
+}

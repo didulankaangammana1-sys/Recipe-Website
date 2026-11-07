@@ -5,18 +5,33 @@ session_start();
 
 require "db.php";
 
-// Check form submission
+// Only accept the login form's POST request.
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: login.php");
     exit;
 }
 
-// Get login details
-$email = strtolower(trim($_POST["email"] ?? ""));
-$password = $_POST["password"] ?? "";
+// Use empty text when a form field was not submitted.
+$email = "";
+if (isset($_POST["email"])) {
+    $email = $_POST["email"];
+}
+
+// Remove spaces around the email and use lowercase letters.
+$email = trim($email);
+$email = strtolower($email);
+
+$password = "";
+if (isset($_POST["password"])) {
+    $password = $_POST["password"];
+}
 
 // Check empty fields
-if ($email === "" || $password === "") {
+if ($email === "") {
+    die("Please enter email and password.");
+}
+
+if ($password === "") {
     die("Please enter email and password.");
 }
 
@@ -26,20 +41,21 @@ $sql = "SELECT id, full_name, password_hash
         WHERE email = ?
         LIMIT 1";
 
-$stmt = $pdo->prepare($sql);
+$statement = $pdo->prepare($sql);
 
-$stmt->execute([$email]);
+// Pass the email separately from the SQL query.
+$parameters = [$email];
+$statement->execute($parameters);
 
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
+$user = $statement->fetch(PDO::FETCH_ASSOC);
 
-// Check email and password
-if (
-    !$user ||
-    !password_verify(
-        $password,
-        $user["password_hash"]
-    )
-) {
+// Check that the user exists before checking the password.
+if (!$user) {
+    die("Incorrect email or password.");
+}
+
+$isPasswordCorrect = password_verify($password, $user["password_hash"]);
+if (!$isPasswordCorrect) {
     die("Incorrect email or password.");
 }
 

@@ -1,0 +1,15 @@
+
+
+/* Footer */
+footer {
+    margin-top: auto;
+    background: #342014;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 5px 0;
+}
